@@ -18,9 +18,9 @@ matrix:
       jdk:
         - openjdk11
       before_script:
-		 - lein ring server-headless 2>&1 >/tmp/server.log &
+        - lein ring server-headless 2>&1 >/tmp/server.log &
       script:
-		 - /bin/sh ./test.sh
+        - /bin/sh ./test.sh
 #      after_script:
 #        - echo "@@@@@"
 #    - language: node_js
