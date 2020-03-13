@@ -45,8 +45,3 @@
                          (assoc-in [:params :multipart] true)
                          (assoc-in [:security :anti-forgery] false))))
   )
-
-(defn -main[]
-  (prn "#######" (storefront/parse-token-info "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiaWdjb21tZXJjZSIsImV4cCI6MTU4NjM0NjUyMiwiY3VzdG9tZXJfaWQiOiIxIiwiZW1haWwiOiJ6aGVuZy5qaXdlaSswMDFAY29ubmVjdHkuY28uanAifQ.2ScGqKczUxKIFgnRW7_z_k-jn2aREMe7Lnaix0EX9tU" 1))
-  )
-
