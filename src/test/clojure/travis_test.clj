@@ -15,6 +15,6 @@
 		)
 )
 
-(deftest ^:test test-3
+(deftest ^:test001 test-3
 	(prn "### 3")
 )
