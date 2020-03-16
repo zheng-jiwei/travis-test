@@ -15,5 +15,5 @@
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.0"]]}}
-  :main ecsite.test
+  :main test.clojure.travis-test
 )
