@@ -18,6 +18,6 @@
   :test-paths ["src"]
   :test-selectors {:default (complement :all)
 				   :zheng :zheng
-				   :test :test
+				   :test001 :test001
 					:all (fn[_] true)}
   )
