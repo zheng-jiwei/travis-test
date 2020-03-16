@@ -1,4 +1,4 @@
-(ns ecsite.test
+(ns test.clojure.travis-test
     (:require [compojure.core :refer :all]
       [compojure.route :as route]
       [clojure.data.json :as json]
