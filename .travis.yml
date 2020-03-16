@@ -8,7 +8,7 @@ notifications:
 
 branches:
   only:
-    - lein-run
+    - lein-test
 #	except:
 #         - develop
 
@@ -17,14 +17,10 @@ matrix:
     - language: clojure
       jdk:
         - openjdk11
-      before_script:
-        - sh /tmp/aaa.sh
       script:
-        - lein run
+        - lein test $test-selector
 #    - language: node_js
 #      script:
 #        - npm test
-
-
 
 

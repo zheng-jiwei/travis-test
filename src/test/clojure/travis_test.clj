@@ -1,23 +1,20 @@
 (ns test.clojure.travis-test
-    (:require [compojure.core :refer :all]
-      [compojure.route :as route]
-      [clojure.data.json :as json]
-      [clojure.edn :as edn]
-      [ecsite.handler :as eh]
+    (:require
       [ecsite.storefront :as sf]
-      [clojure.java.io :as io]
+	  [clojure.test :refer :all]
       )
     )
 
-(defn test-one[]
-  (prn "### test-one" (sf/server-query "/v2/shipping/zones"))
+(deftest ^:zheng test-1
+	(prn "### 1")
 )
 
-(defn test-two[]
-  (prn "### test-two" (sf/parse-token-info "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiaWdjb21tZXJjZSIsImV4cCI6MTU4NjM0NjUyMiwiY3VzdG9tZXJfaWQiOiIxIiwiZW1haWwiOiJ6aGVuZy5qaXdlaSswMDFAY29ubmVjdHkuY28uanAifQ.2ScGqKczUxKIFgnRW7_z_k-jn2aREMe7Lnaix0EX9tU" 1))
+(deftest ^{:zheng true} test-2 
+	(let [result (sf/parse-token-info "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiaWdjb21tZXJjZSIsImV4cCI6MTU4NjM0NjUyMiwiY3VzdG9tZXJfaWQiOiIxIiwiZW1haWwiOiJ6aGVuZy5qaXdlaSswMDFAY29ubmVjdHkuY28uanAifQ.2ScGqKczUxKIFgnRW7_z_k-jn2aREMe7Lnaix0EX9tU" 1)]
+		(prn "#### 2 " result)
+		)
 )
 
-(defn -main[]
-  ((eh/get-store-config (fn[in] (test-one) (test-two))) {})
- )
-
+(deftest ^:test test-3
+	(prn "### 3")
+)
