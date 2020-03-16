@@ -18,7 +18,7 @@ matrix:
       jdk:
         - openjdk11
       script:
-        - lein test $test-selector
+        - lein test $T_NAME
 #    - language: node_js
 #      script:
 #        - npm test
