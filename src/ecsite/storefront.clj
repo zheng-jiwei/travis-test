@@ -8,6 +8,7 @@
       [cheshire.core :as cjson]
       [ecsite.common.other :as other]
       [ecsite.common.url :as url_util]
+     [clojure.test :as ct]
       )
 
   (:import
@@ -20,13 +21,12 @@
 
 (def store_setting (ref {}))
 
-;
-;(defn id-to-base64 [^String type ^String id]
-;  (String. (.encode (java.util.Base64/getEncoder) (.getBytes (str "gid://shopify/" type "/" id))))
-;  )
-;
+
+(defn id-to-base64 [^String type ^String id]
+  (String. (.encode (java.util.Base64/getEncoder) (.getBytes (str "gid://bigcommerce/" type "/" id))))
+  )
+
 (defn base64-to-id [^String base64]
-  (prn base64)
   (String. (.decode (java.util.Base64/getDecoder) (.getBytes base64)))
   )
 
@@ -568,3 +568,10 @@
         {:status 501 :body (cjson/generate-string e)}
         ))
     )
+
+(defn get-private-info [request]
+  (if (nil? (-> request :params :id))
+    {:error 1 :message "AAAA"}
+    {:email "aa@bb.com"}
+    )
+  )

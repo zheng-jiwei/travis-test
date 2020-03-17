@@ -19,5 +19,7 @@
   :test-selectors {:default (complement :all)
 				   :zheng :zheng
 				   :test001 :test001
+				   :test002 :test002
+				   :test103 :test103
 					:all (fn[_] true)}
   )

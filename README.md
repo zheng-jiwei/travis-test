@@ -1,103 +1,66 @@
-### ƒeƒXƒgŠÂ‹«ì¬
+### ãƒ•ã‚¡ã‚¤ãƒ«æ§‹æˆã®èª¬æ˜
 
-###### Mac‚Ìê‡
-- git ‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚é
-  - $ brew update
-  - $ brew install git
-- openJDK‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚é
-  - https://qiita.com/spaciba_h_t/items/c96e96be99596b0a9fe4
-- leiningen ‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚é  
-  - brew install leiningen  
+- project.cljã®å¤‰æ›´
+ä¸‹è¨˜ã®ã‚³ãƒ¼ãƒ‰ã‚’project.cljã«è¿½åŠ ã—ã¾ã™ã€‚ï¼ˆ:test-1ã‚„test-2ã‚’ä»»æ„ã®keywordã¸å¤‰æ›´ã§ãã¾ã™ï¼‰
+```
+Â  :test-paths ["src"]
+Â  :test-selectors {:default (complement :all)
+Â  Â ã€€ã€€ã€€ã€€ã€€Â  Â  ã€€:test-1 :test-1
+Â  ã€€ã€€ã€€ã€€ã€€Â  Â  ã€€ :test-2 :test-2
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€:all (fn[_] true)}
+```
 
-###### Windows‚Ìê‡
-- git ‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚é
-  - https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409
-- openJDK‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚é
-  - https://qiita.com/ryo-sato/items/87d05021fcc0519e8828
-- leiningen‚ğƒCƒ“ƒXƒg[ƒ‹‚·‚é
-  - https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein.bat ‚ğƒ[ƒJƒ‹‚Éƒ_ƒEƒ“ƒ[ƒh‚·‚é
-  - lein.bat self-install  
- ¦¸”s‚Ìê‡Ahttps://github.com/technomancy/leiningen/releases/download/2.9.2/leiningen-2.9.2-standalone.zip ‚ğè“®ƒ_ƒEƒ“ƒ[ƒh‚µ‚ÄAlein.bat ‚Æ“¯‚¶ƒtƒHƒ‹ƒ_‚É‰ğ“€‚µ‚Ä‚­‚¾‚³‚¢Blein.batŠİƒtƒHƒ‹ƒ_‚ÌƒpƒX‚ğ’Ê‚·
-  - Ú×‚Í http://antibayesian.hateblo.jp/entry/20120122/1327236946
+- .travis.yml ã®è¿½åŠ 
+scriptã®ã‚³ãƒãƒ³ãƒ‰ã¯lein test $T_KEYã§ç’°å¢ƒå¤‰æ›´ã‚’è²°ã£ã¦ lein test ã§å®Ÿæ–½ã—ã¾ã™ã€‚
 
-### ‹N“®
-- git clone https://github.com/zheng-jiwei/ec-site-bigcommerce.git
-- clone‚³‚ê‚½ƒtƒHƒ‹ƒ_[‚ÉˆÚ“®‚·‚é
-- `lein ring server-headless` ‚ÅƒT[ƒo[‚ğ‹N“®‚µ‚Ä‚­‚¾‚³‚¢B  
-- ƒuƒ‰ƒU[‚Å `http://localhost:8080/index.html` ‚ğƒAƒNƒZƒX‚µ‚½‚çAƒTƒCƒg‚Ì•\¦‚ª‚Å‚«‚Ü‚·B
-
-***
-
-### bigcommerce store‚Ìİ’è
-- ƒXƒgƒAƒAƒJƒEƒ“ƒg‚Ìì¬
-  - https://www.bigcommerce.com/essentials/free-trial
-- APIƒAƒJƒEƒ“ƒgì¬
-@- bigcommerce store‚ÉƒƒOƒCƒ“
-  - ¶‘¤‚Ìƒƒjƒ…[ > Advanced Settings > API Accounts ‚Å‰æ–Ê‚ğŠJ‚¢‚ÄAƒ{ƒ^ƒ“ucreate API accountv >  ucreate v2/v3 API tokenv‚ğƒNƒŠƒbƒN‚·‚é
-  - uOAuth Scopesv‚É‚ ‚é€–Ú‚Í‚·‚×‚ÄÅ‘åŒ ŒÀ‚ğ•t—^‚µ‚Äimodify‚ª‚ ‚ê‚ÎmodifyA‚È‚¯‚ê‚Î readonlyAloginAmanagementAcreatejAusavev‚ğƒNƒŠƒbƒN‚µ‚Ü‚·B
-@- o‚Ä‚«‚½î•ñ‚Í config.json ‚É‚ ‚éŠÖ˜A‚·‚ékeyword‚Ì’l‚Æ“ü‚ê‘Ö‚¦‚·‚éishop_cache‚ÍAPI PATH‚ÌŒã‚ë‚©‚ç2”Ô–ÚƒZƒOƒƒ“ƒg‚Ì’l‚Å‚·j
-- ”z‘—’nˆæ‚Ìİ’è
-  - ŠÇ—‰æ–Ê¶‘¤‚Ìƒƒjƒ…[ > Store Setup > Shipping ‚ğŠJ‚«‚Ü‚·B
-  - Add shipping zone > add a country zone ‚ğƒNƒŠƒbƒN‚µ‚ÄA”CˆÓ‚Ì‘‚ğ‘I‘ğ‚µ‚Ä submit ‚µ‚Ü‚·B
-  - default shipping rules ’†‚É‘I‘ğ‚³‚ê‚½‘‚ªo‚Ä‚«‚ÄAconfigure‚ğƒNƒŠƒbƒN‚µ‚Ü‚·
-  - ship by ‚ğON‚É‚µ‚ÄAdefault‚Í by weight ‚ª•\¦‚³‚ê‚ÄADefault shipping cost ‚É”CˆÓ‚Ì”š‚ğ“ü‚ê‚ÄOK‚Å‚·BRangesƒGƒŠƒA‚Íd‚³‹æŠÔ‚Ì‘——¿‚ğ“K“–‚É’Ç‰Á‚µ‚ÄAsubmit‚Å•Û‘¶‚µ‚Ü‚·B
-  - ”z‘—’nˆæ‚Í•¡”’Ç‰Á‚Å‚«‚Ü‚·B’Ç‰Á‚³‚ê‚½î•ñ‚Í’•¶‚Ì”z‘—æ‰æ–Ê‚É‘I‘ğ‚Å‚«‚Ü‚·B
-  - Real-time shipping quotes‚ÍAUPS‚âFedex‚ÆŒ_–ñ•K—v‚ª‚ ‚èAƒeƒXƒg‚µ‚Ä‚¢‚Ü‚¹‚ñB
-- x•¥‚¢‚Ìİ’è
-  - ŠÇ—‰æ–Ê¶‘¤‚Ìƒƒjƒ…[ > Store Setup > Payments ‚ğŠJ‚«‚Ü‚·B
-  - Stripe ‚ğON‚É‚µ‚ÄAistripe ‚ÌƒƒOƒCƒ“‚ª•K—v‚Å‚·jStripe Settings ‚É test mode ‚ğƒ`ƒFƒbƒN‚µ‚Ä save ‚µ‚Ü‚·B
-  - Stripe ‚ÌƒAƒJƒEƒ“ƒgì¬‚Í@https://dashboard.stripe.com/register@‚©‚ç‚Å‚«‚Ü‚·Biì¬‚µ‚½Œã‚à‹âsŒûÀ‚È‚Ç“ü—Í‚ª•K—v‚Å‚·‚ªA‰¼‚Ìî•ñ‚ğ“ü—Í‚Å‚à–â‘è‚È‚³‚»‚¤‚Å‚·j
-
-***  
-
-### ¤•i“o˜^‚ÆƒTƒCƒg‰æ–Ê‚Ì”½‰f
-- ƒfƒtƒHƒ‹ƒg¤•i
-  - ƒXƒgƒAì¬‚É”º‚Á‚ÄAƒfƒtƒHƒ‹ƒg‚Ìdemo¤•i‚Í13ŒA6ƒJƒeƒSƒŠ‚ª‚ ‚è‚Ü‚·B
-  - default ¤•i‚ÌƒIƒvƒVƒ‡ƒ“î•ñ‚Í–â‘è‚ª‚ ‚è‚Ü‚·i‘¶İ‚µ‚È‚¢color‚ªcolor‚Ì‘I‘ğˆ‚Éo‚Ä‚­‚éj‚Ì‚ÅA‘€ì‚ÌÛƒGƒ‰[‚Ì‰Â”\«‚ª‚ ‚è‚Ü‚·B
-- ¤•i“o˜^
-  - ŠÇ—‰æ–Ê¶‘¤‚Ìƒƒjƒ…[uproductv> uaddv‚ÅV‹K¤•i“o˜^‰æ–Ê‚ğŠJ‚­
-  - •K{‚Ì€–Ú(u\*v‚Â‚¢‚Ä‚¢‚é€–Ú)‚Ì‚İ‚Å‚à‚¢‚¢‚Å‚·‚Ì‚ÅA“ü—ÍI‚í‚Á‚½‚çusavev‚µ‚Ü‚·B(Categories ‚Ì€–Ú‚Í Shop All ‚Æ Garden ‚ğ‘I‘ğ‚·‚é‘O’ñ‚Åà–¾‚µ‚Ü‚·)
-  - ŠÇ—‰æ–Ê¶‘¤‚Ìƒƒjƒ…[uproductv> uproduct categoriesv‚ğŠJ‚¢‚ÄAgarden ƒJƒeƒSƒŠ‚Ì•ÒW‰æ–Ê‚ÉuCategory Imagev‚ğ’Ç‰Á‚µ‚Ä‚­‚¾‚³‚¢B
-- ECSite‚ÅŠm”F
-  - `http://localhost:8080/index.html` ‚ğƒAƒNƒZƒX‚·‚é
-  - ![new prodcut](readme/new-product.jpg)
-  - ƒJƒeƒSƒŠ Garden ‚ğƒNƒŠƒbƒN‚µ‚½‚ç‰º‹L‚Ì‰æ–Ê‚Ö‘JˆÚ‚µ‚Ü‚·B
-  - ![category with image](readme/category-with-img.jpg)
+- travis-ci.comã®ç®¡ç†ç”»é¢ã«å¤‰æ•°ã®è¿½åŠ ã€€
+  - ç®¡ç†ç”»é¢å³ä¸Šã®iconã‚’ã‚¯ãƒªãƒƒã‚¯ã€€ï¼ã€€settingsã€€ï¼ã€€travis-testï¼ˆbranchï¼‰ã®settingsã€€ï¼ã€€Environment Variables
+  - NAME = T_KEYã€€ã€€BRANCH=travis-testï¼ˆé¸æŠã—ãªã‘ã‚Œã°å…¨éƒ¨branchã§ã‚‚ã‚ˆã„ã§ã™ï¼‰Â  Â  Â  Â 
+  - VALUE=:zheng ï¼ˆã€Œ:ã€ãŒä»˜ã„ã¦ã¾ã™ã€‚ã“ã®keywordã¯ project.cljã«å®šç¾©ã—ãŸtest-selectorsã®ä¸€ã¤ã§ã™ï¼‰
+  ã¾ãŸã¯ VALUE=test.clojure.travis-test ï¼ˆnamespaceã‚’è¨­å®šã™ã‚‹å ´åˆã€travis_test.cljã«ã‚ã‚‹deftestã‚’å…¨éƒ¨å®Ÿæ–½ã•ã‚Œã¾ã™ï¼‰
 
 
-***
-### À‘•‹@”\
-- ƒgƒbƒvƒy[ƒW
-![index](readme/index.jpg)
+### ãƒ†ã‚¹ãƒˆã‚³ãƒ¼ãƒ‰ã®èª¬æ˜
 
-- ƒJƒeƒSƒŠƒy[ƒW
-![category](readme/category.jpg)
+- ãƒ†ã‚¹ãƒˆå®Ÿæ–½ã§ãã‚‹ç²’åº¦ä¸‹è¨˜ã®ã‚ˆã†ã«åˆ†ã‘ã‚‰ã‚Œã¦ã„ã¾ã™
+  - lein test
+    - parameterãªã—ã§defaultã‚’å®Ÿæ–½ã—ãŸã‚‰ã€:test-pathsã§æŒ‡å®šã—ãŸãƒ‘ã‚¹é…ä¸‹ã«ã™ã¹ã¦cljãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚ã‚‹ deftest ãƒ•ã‚¡ãƒ³ã‚¯ã‚·ãƒ§ãƒ³ã‚’ãƒ†ã‚¹ãƒˆã—ã¾ã™ã€‚
+  - lein test test.clojure.travis-test
+    - ãƒ†ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã®namespaceã‚’æŒ‡å®šã—ãŸã‚‰ã€è©²å½“namespaceã«å®šç¾©ã—ãŸ deftestã‚’ã™ã¹ã¦ãƒ†ã‚¹ãƒˆã—ã¾ã™ã€‚
+  - lein test :test001
+    - keywordã‚’æŒ‡å®šã—ãŸã‚‰ã€deftest ^:test001 ã®ã‚ˆã†ãªè©²å½“keywordã‚’æ˜ç¢ºæ¨™è¨˜ã—ãŸãƒ•ã‚¡ãƒ³ã‚¯ã‚·ãƒ§ãƒ³ã‚’ãƒ†ã‚¹ãƒˆã—ã¾ã™ã€‚
+  - lein test :only test.clojure.travis-test/function-name ã€€
+    - namespaceã¨function-nameã‚’æŒ‡å®šã—ãŸã‚‰ã€æŒ‡å®šã—ãŸnamespaceã«ã‚ã‚‹ function-nameã®ã¿ãƒ†ã‚¹ãƒˆã—ã¾ã™ã€‚
+  - çµ„ã¿åˆã‚ã›ãƒ†ã‚¹ãƒˆã‚‚å¯èƒ½ã§ã™
+```
+   lein test :test001 :test002
+   //:test001 ã¨ :test002 ã‚’æ¨™è¨˜ã—ãŸ deftestã‚’å®Ÿæ–½ã™ã‚‹
 
-- ¤•iƒy[ƒW
-![prodcut](readme/product.jpg)
+   lein test :test103 test.clojure.travis-test
+   //:test103ã‚’æ¨™è¨˜ã—ãŸdeftestã¨namespace test.clojure.travis-testã«ã‚ã‚‹ã™ã¹ã¦deftestã‚’å®Ÿæ–½ã™ã‚‹
 
-- ƒJ[ƒg•\¦ƒy[ƒW
-![cart](readme/cart.jpg)
+   lein test test.clojure.travis-test test.clojure.travis-test-another
+   //namespace test.clojure.travis-testã¨test.clojure.travis-test-anotherã«ã‚ã‚‹ã™ã¹ã¦deftestã‚’å®Ÿæ–½ã™ã‚‹
+```
 
-- ZŠ“ü—Íƒy[ƒW
-![shipping](readme/shipping.jpg)
+- ãƒ†ã‚¹ãƒˆå®Ÿæ–½ã‚’åˆ†ã‘ã‚‹ãŸã‚ã€project.cljã«ä¸‹è¨˜ã®ã‚ˆã†ãªã‚³ãƒ¼ãƒ‰ã‚’è¿½åŠ ã—ã¾ã™
+```
+  :test-paths
+Â  :test-selectors {:default (complement :all)
+Â  ã€€ã€€ã€€ã€€ã€€Â  Â  ã€€ :test001 :test001
+Â  ã€€ã€€ã€€ã€€ã€€Â  Â  ã€€ :test002 :test002
+Â  ã€€ã€€ã€€ã€€ã€€Â  Â  ã€€ :test003 :test003
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€:all (fn[_] true)}
+```
 
-- x•¥‚¢î•ñ“ü—Íƒy[ƒW
-![payment](readme/payment.jpg)
+- ãƒ†ã‚¹ãƒˆãƒ•ã‚¡ãƒ³ã‚¯ã‚·ãƒ§ãƒ³ã®æ§‹æˆ
 
-- ’•¶Š®—¹ƒy[ƒW
-![complete](readme/end.jpg)
-
-- ’•¶—š—ğ
-![order list](readme/orderlist.jpg)
-
-- ‰ïˆõƒƒOƒCƒ“
-![login](readme/login.jpg)
-
-
-***
-
-### –â‘è
-- ¤•i‚ğcart‚É“ü‚ê‚½ŒãAcart‚©‚ç¤•iî•ñ‚ğæ“¾‚·‚é‚É¤•i’P‰¿‚Í¬”“_ˆÈŒã‚ª‚ ‚éê‡A”’l‚ªØ‚èã‚°‚é‚æ‚¤‚É‚È‚è‚Ü‚·Bi¤•i’P‰¿‚Í‰~‚Ìê‡‚Ì‚İA•Äƒhƒ‹‚Ìê‡–â‘è‚ª‚ ‚è‚Ü‚¹‚ñj
-- ¤•i‚Ìretail_price, price‚Æsale_price‚Ì’†‚ÉAgraphql‚ğ—˜—p‚·‚éê‡price‚Ì”’l‚Í³‚µ‚­‚È‚¢‚Å‚·Bserver-to-server API‚ğ—˜—p‚·‚éê‡A³‚µ‚­æ‚ê‚Ü‚·‚ªæ“¾‚·‚éî•ñ‚ª‘«‚è‚È‚­‚Ä”‰ñbigcommerceƒT[ƒo[‚Érequest‚·‚é•K—v‚ª‚ ‚è‚Ü‚·‚Ì‚ÅAŒ»İ‚Ígraphql‚Ì•û–@‚ÅÀ‘•‚µ‚Ä‚¢‚Ü‚·B
-- ’•¶Šm’èƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN‚µ‚ÄAu"code"= 30102, "title"="The payment was declined."vƒGƒ‰[‚ªo‚éê‡A’•¶¤•i‚Ì”‚ğ•ÏX‚µ‚ÄÄ“x‚µ‚Ä‚­‚¾‚³‚¢BiŒ´ˆö‚ÍŠm”F’†‚Å‚·j
+  ```
+  ã€€(deftest ^keyword function-name)
+   ä¾‹ï¼š
+  ã€€(deftest ^:test001 function-A
+      (is (= 2 1))
+     )
+  ```
+  - keyword ã¯ test-selectorsã«å®šç¾©ã—ãŸkeywordã®ä¸€ã¤ã‚’é¸ã¹ã‚‹
+ã€€- function-nameã¯ä»»æ„
