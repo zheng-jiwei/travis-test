@@ -3,7 +3,7 @@
 　![folders](readme/folders.jpg)
 
 - project.cljの変更
-下記のコードをproject.cljに追加します。（:test-1やtest-2を任意のkeywordへ変更できます）
+下記のコードをproject.cljに追加します。
 ```
   :test-paths ["src"]
   :test-selectors {:default (complement :all)
