@@ -15,11 +15,10 @@
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                         [ring/ring-mock "0.3.0"]]}}
-  :test-paths ["src"]
+  :test-paths ["src/test"]
   :test-selectors {:default (complement :all)
-				   :zheng :zheng
-				   :test001 :test001
-				   :test002 :test002
-				   :test103 :test103
+				   :user001 :user001
+				   :user002 :user002
+				   :user003 :user003
 					:all (fn[_] true)}
   )
